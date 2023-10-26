@@ -1,25 +1,16 @@
-import logo from './logo.svg';
 import Navbar from './components/Navbar';
+import background from './BackgroundImage.png';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage: `url(${background})`}}>
       <header className="App-header">
         <Navbar/>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <div className="mainTitle"> Dish Discovery </div>
+      <div> Make cooking hassle-free. </div>
+      <div className="search-bar"> <input type="text" placeholder="Search for a Recipe..." /> <button> Search </button> </div>
     </div>
   );
 }

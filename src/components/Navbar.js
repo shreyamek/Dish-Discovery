@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-      <Link to="/contact">Contact</Link>
-    </nav>
+    <div className='nav'>
+      <ul>
+        <li> <a href="https://www.example.com" rel="noopener noreferrer">Home</a> </li>
+        <li> <a href="https://www.example.com" rel="noopener noreferrer">Recommended Recipes</a> </li>
+        <li> <a href="https://www.example.com" rel="noopener noreferrer">Saved Recipes</a> </li>
+        <li> <a href="https://www.example.com" rel="noopener noreferrer">Add Recipes</a> </li>
+        <li> <a href="https://www.example.com" rel="noopener noreferrer">Profile</a> </li>
+      </ul>
+    </div>
   );
 }
 

@@ -60,6 +60,23 @@ ul li {
   font-size: 60%;
 }
 
+.heading1 {
+  font-family: 'Roboto';
+  padding-top: 10%;
+  font-size: 150%;
+  font-weight: 700;
+}
+
+.homefeed {
+  top: 0;
+  padding-bottom: 2%;
+  width: 100%;
+  font-size: 50%;
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+
+
 .search-bar {
   /* Basic styling */
   margin: 0 auto;
@@ -78,6 +95,7 @@ ul li {
   ::placeholder {
     color: #999;
   }
+
 
   /* Hover effect */
   transition: border-color 0.3s;

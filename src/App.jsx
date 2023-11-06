@@ -6,6 +6,8 @@ import {SavedRecipes} from './pages/SavedRecipes';
 import { Profile } from './pages/Profile';
 import { AddRecipes } from './pages/AddRecipes';
 import {Route, Routes} from "react-router-dom";
+import { Settings } from './pages/Settings';
+
 
 
 function App() {
@@ -19,10 +21,10 @@ function App() {
             <Route path="/feed" element={<Feed/>}/>
             <Route path="/savedrecipes" element={<SavedRecipes/>}/>
             <Route path="/profile" element={<Profile/>}/>
+            <Route path="/settings" element={<Settings/>}/>
             <Route path="/addrecipes" element={<AddRecipes/>}/>
           </Routes>
       </header>
-      
     </div>
   );
 }

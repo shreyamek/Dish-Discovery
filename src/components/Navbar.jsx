@@ -20,6 +20,9 @@ export const Navbar = () => {
       <li>
         <Link to='/profile'>Profile</Link>
       </li>
+      <li>
+        <Link to='/settings'>Settings</Link>
+      </li>
     </ul>
   </div>
   )

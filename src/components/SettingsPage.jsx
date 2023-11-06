@@ -49,18 +49,6 @@ const SettingsPage = () => {
             </a>
           </li>
           <br></br>
-
-          <li>
-            <a
-              href="#about"
-              className={activeSection === 'about' ? 'active' : ''}
-              onClick={() => handleSectionClick('about')}
-            >
-
-              About
-            </a>
-          </li>
-          <br></br>
           <li>
             <a
               href="#logout"
@@ -208,55 +196,7 @@ const SettingsPage = () => {
   At Dish Discovery, we're committed to helping you find joy and inspiration in cooking. Our Help and Support resources are designed to assist you on your culinary journey. Whether you're an experienced chef or just starting, we're here to make your experience memorable.
 </p>
 
-        </section>
-
-
-<section id="about" className={activeSection === 'about' ? 'visible' : 'hidden'}>
-  <h2>About</h2>
-  <p>
-  About Dish Discovery
-  Dish Discovery is a culinary haven that's tailored to everyday people who are passionate about embracing healthy eating while minimizing food waste. Our platform is dedicated to those who wish to explore the world of cooking with ease, without the stress of complicated recipes or the guilt of wasting ingredients. Let's dive deeper into what Dish Discovery is all about.
-  <br /><br />
-
-  Our Mission:
-  <br />
-  <ul>
-    <li>At Dish Discovery, our mission is to make healthy eating accessible and effortless for everyone. We understand the challenges of busy lives and how food waste can negatively impact our environment. That's why we've created a unique and user-friendly platform to help you rediscover the joy of cooking and inspire healthier eating habits.</li>
-  </ul>
-  <br />
-
-  The Ingredients of Dish Discovery:
-  <ol>
-    <li>User-Based Website Interface: Our website provides a seamless and intuitive user experience. Whether you're a seasoned chef or a novice in the kitchen, our interface is designed to accommodate your culinary skills. We offer a wide range of easy-to-follow recipes that empower you to create delicious and nutritious meals without the complexity.</li>
-    <li>Server: Our server ensures that you have uninterrupted access to our vast collection of recipes, helpful content, and community interactions. It's the backbone that keeps our platform running smoothly.</li>
-    <li>Dynamic Database: The heart of Dish Discovery is its dynamic database, containing a rich library of recipes, ingredients, and cooking tips. This database continuously adapts and grows, offering you a treasure trove of options to suit your culinary preferences.</li>
-  </ol>
-  <br />
-
-  Our Purpose:
-  <ol>
-    <li>Effortless Recipes: Our platform offers a diverse selection of recipes that cater to various dietary preferences, skill levels, and cooking time constraints. Say goodbye to complicated dishes, and say hello to meals that are both nutritious and uncomplicated to prepare.</li>
-    <li>Food Waste Reduction: We believe in the importance of reducing food waste. Dish Discovery not only helps you plan your meals effectively but also suggests recipes that utilize ingredients you already have. This proactive approach to cooking ensures that your groceries are used efficiently.</li>
-    <li>Healthier Eating Habits: Eating well is the cornerstone of a healthy lifestyle. Dish Discovery promotes healthier eating habits by offering nutritious recipes and cooking tips. We encourage you to explore new ingredients and discover healthier alternatives.</li>
-    <li>Time Savings: Our platform saves you valuable time by providing quick and easy recipes that fit into your busy schedule. No more endless hours in the kitchen – Dish Discovery enables you to prepare wholesome meals efficiently.</li>
-  </ol>
-  <br />
-
-  The Positive Impact:
-  <ol>
-    <li>Reducing Food Waste: Every meal prepared through Dish Discovery is a step towards reducing food waste and minimizing your carbon footprint.</li>
-    <li>Promoting Health: Your choice to cook and enjoy nutritious meals inspires healthier eating habits for yourself and your loved ones.</li>
-    <li>Saving Time: The time you save with our convenient recipes can be spent on activities that matter most to you.</li>
-  </ol>
-  <br />
-
-  Dish Discovery is more than just a culinary website; it's a lifestyle choice. We invite you to join our vibrant community of food enthusiasts who share your passion for healthy eating and reducing food waste. Together, we can transform everyday meals into memorable culinary experiences.
-  <br /><br />
-
-  Let's embark on a journey of discovery, where healthy eating, sustainability, and simplicity unite in the kitchen.
-</p>
-
-</section>
+ </section>
 
 <section id="logout" className={activeSection === 'logout' ? 'visible' : 'hidden'}>
   <h2>Logout</h2>

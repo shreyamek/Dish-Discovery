@@ -7,6 +7,9 @@ import { Profile } from './pages/Profile';
 import { AddRecipes } from './pages/AddRecipes';
 import {Route, Routes} from "react-router-dom";
 import RecipeDetail from './pages/Recipe';
+import { Settings } from './pages/Settings';
+import { About } from './pages/About';
+
 
 
 function App() {
@@ -20,11 +23,12 @@ function App() {
             <Route path="/feed" element={<Feed/>}/>
             <Route path="/savedrecipes" element={<SavedRecipes/>}/>
             <Route path="/profile" element={<Profile/>}/>
+            <Route path="/settings" element={<Settings/>}/>
+            <Route path="/about" element={<About/>}/>
             <Route path="/addrecipes" element={<AddRecipes/>}/>
             <Route path="/recipe/:recipeId" element={<RecipeDetail />} />
-          </Routes>
+\          </Routes>
       </header>
-      
     </div>
   );
 }

@@ -1,11 +1,12 @@
 import {Navbar} from './components/Navbar';
 import './App.css';
 import Home from "./pages/Home";
-import {Feed} from './pages/Feed';
+import Feed from './pages/Feed';
 import {SavedRecipes} from './pages/SavedRecipes';
 import { Profile } from './pages/Profile';
 import { AddRecipes } from './pages/AddRecipes';
 import {Route, Routes} from "react-router-dom";
+import RecipeDetail from './pages/Recipe';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/savedrecipes" element={<SavedRecipes/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/addrecipes" element={<AddRecipes/>}/>
+            <Route path="/recipe/:recipeId" element={<RecipeDetail />} />
           </Routes>
       </header>
       

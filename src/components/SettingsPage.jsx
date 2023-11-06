@@ -45,17 +45,22 @@ const SettingsPage = () => {
               onClick={() => handleSectionClick('help-support')}
             >
               Help & Support
+             
             </a>
           </li>
+          <br></br>
+
           <li>
             <a
               href="#about"
               className={activeSection === 'about' ? 'active' : ''}
               onClick={() => handleSectionClick('about')}
             >
+
               About
             </a>
           </li>
+          <br></br>
           <li>
             <a
               href="#logout"
@@ -71,17 +76,34 @@ const SettingsPage = () => {
         <section id="account-info" className={activeSection === 'account-info' ? 'visible' : 'hidden'}>
           <h2>Account Info</h2>
           <div className="profile-info">
-    <div className="profile-icon"></div>
-    <div className="user-details">
-      <p>Username: JohnDoe</p>
-      <p>Email: john.doe@example.com</p>
-      <p>Linked Social Media:</p>
-      <ul>
-        <li>Twitter: @johndoe</li>
-        <li>Instagram: @johndoe_photos</li>
-      </ul>
-    </div>
+  <div className="profile-icon">
+    <img src="profile-image.jpg" alt="User Profile" />
   </div>
+  <div className="user-details">
+    <div className="detail">
+      <p>Username: JohnDoe</p>
+      <span className="change-icon">✏️</span>
+    </div>
+    <div className="detail">
+      <p>Email: john.doe@example.com</p>
+      <span className="change-icon">✏️</span>
+    </div>
+    <div className="detail">
+      <p>Linked Social Media:</p>
+    </div>
+    <ul className="social-media-list">
+      <li>
+        <p>Twitter: @johndoe</p>
+        <span className="change-icon">✏️</span>
+      </li>
+      <li>
+        <p>Instagram: @johndoe_photos</p>
+        <span className="change-icon">✏️</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
         </section>
 
         <section id="privacy-security" className={activeSection === 'privacy-security' ? 'visible' : 'hidden'}>
@@ -148,8 +170,7 @@ const SettingsPage = () => {
         <section id="help-support" className={activeSection === 'help-support' ? 'visible' : 'hidden'}>
           <h2>Help & Support</h2>
           <p>
-  Help and Support
-  <br /><br />
+ 
   At Dish Discovery, we're dedicated to providing the assistance and support you need to ensure a smooth and enjoyable experience with our platform. Whether you have questions, encounter issues, or simply want to learn more about how to make the most of our services, our Help and Support resources are here to guide you.
   <br /><br />
 

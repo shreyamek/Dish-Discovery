@@ -8,6 +8,7 @@ import { AddRecipes } from './pages/AddRecipes';
 import {Route, Routes} from "react-router-dom";
 import RecipeDetail from './pages/Recipe';
 import { Settings } from './pages/Settings';
+import { About } from './pages/About';
 
 
 
@@ -23,6 +24,7 @@ function App() {
             <Route path="/savedrecipes" element={<SavedRecipes/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/settings" element={<Settings/>}/>
+            <Route path="/about" element={<About/>}/>
             <Route path="/addrecipes" element={<AddRecipes/>}/>
             <Route path="/recipe/:recipeId" element={<RecipeDetail />} />
           </Routes>

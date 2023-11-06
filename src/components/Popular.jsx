@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import {Splide, SplideSlide} from "@splidejs/react-splide";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css"
 
 function Popular() {
@@ -10,41 +10,46 @@ function Popular() {
         getPopular();
     }, []);
 
-    const getPopular = async() => {
+    const getPopular = async () => {
         const api = await fetch(
             `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
-          );
+        );
         const data = await api.json();
         setPopular(data.recipes);
     };
 
+    if (!popular) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div>
-        <Wrapper>
-            <Splide
-                options={{
-                    perPage: 4,
-                    arrows: false,
-                    pagination: false,
-                    drag: "free",
-                    gap: "1rem",
-                }}
-            >
-                {popular.map((recipe) => {
-                    return (
-                        <SplideSlide>
-                            <Card>
-                                <p className='sideText'>{recipe.title}</p>
-                                <img src={recipe.image} alt={recipe.title}></img>
+            <Wrapper>
+                <Splide
+                    options={{
+                        perPage: 4,
+                        arrows: false,
+                        pagination: false,
+                        drag: "free",
+                        gap: "1rem",
+                    }}
+                >
+                    {popular.map((recipe) => {
+                        return (
+                            <SplideSlide key={recipe.id}>
+                                <a href={`/recipe/${recipe.id}`}>
+                                    <Card>
+                                        <p className='sideText'>{recipe.title}</p>
+                                        <img src={recipe.image} alt={recipe.title} />
+                                    </Card>
+                                </a>
+                            </SplideSlide>
+                        );
+                    })}
 
-                            </Card>
-                        </SplideSlide>
-                    );
-                })}
-
-            </Splide>
-        </Wrapper>   
-    </div>
+                </Splide>
+            </Wrapper>
+        </div>
     );
 
 }

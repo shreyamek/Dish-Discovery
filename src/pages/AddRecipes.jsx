@@ -1,68 +1,70 @@
+import backgroundImage from '../BackgroundImage.png';
 import React from 'react';
 
+
 export const AddRecipes = () => {
-  const containerStyle = {
-    backgroundColor: '#b3d4e8',
-    padding: '40px', 
-    borderRadius: '10px',  
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-    maxWidth: '800px',  
-    margin: '40px auto 0',  
-    color: 'black', 
-  };
+ const containerStyle = {
+   backgroundImage: `url(${backgroundImage})`,
+   backgroundSize: 'cover',
+   backgroundPosition: 'center',
+   backgroundColor: '#FFE1EE', // Change the background color
+   padding: '70px',
+   borderRadius: '5px',
+   boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+   width: '100vw',
+   height: '100vh',
+   color: '#000',
+   position: 'relative',
+ };
 
-  const headingStyle = {
-    fontSize: '35px',
-  };
 
-  const paragraphStyle = {
-    fontSize: '17px',
-  };
+ const contentStyle = {
+   maxWidth: '800px',
+   margin: '20px auto 0',
+   padding: '20px',
+   background: '#dbead2',
+   borderRadius: '5px',
+ };
 
-  const lineStyle = {
-    backgroundColor: '#b3d4e8',
-    height: '2px',
-    margin: '15px 0',
-  };
 
-  const submitButtonStyle = {
-    backgroundColor: '#5A5A5A',
-    border: '1px solid grey',
-    padding: '15px 30px', 
-    color: 'white',
-    borderRadius: '8px',
-    fontSize: '17px', 
-  };
+ const headingStyle = {
+   fontSize: '34px',
+ };
 
-  return (
-    <div style={containerStyle}>
-      <h1 style={headingStyle}>Add Your Recipe</h1>
-      <p style={paragraphStyle}>
-        Share your favorite recipe with the community! Fill out the form below to 
-        add your recipe to our collection.
-      </p>
-      <div>
-        <form>
-          <div>
-            <label htmlFor="recipeName">Recipe Name:</label>
-            <input type="text" id="recipeName" name="recipeName" />
-          </div>
-          <div style={lineStyle}></div>
-          <div>
-            <label htmlFor="ingredients">Ingredients:</label>
-            <textarea id="ingredients" name="ingredients"></textarea>
-          </div>
-          <div style={lineStyle}></div>
-          <div>
-            <label htmlFor="instructions">Instructions:</label>
-            <textarea id="instructions" name="instructions"></textarea>
-          </div>
-          <div style={lineStyle}></div>
-          <button style={submitButtonStyle} type="submit">
-            SUBMIT RECIPE
-          </button>
-        </form>
-      </div>
-    </div>
-  );
+
+ const paragraphStyle = {
+   fontSize: '20px',
+ };
+
+
+ return (
+   <div style={containerStyle}>
+     <div style={contentStyle}>
+       <h1 style={headingStyle}>Add Your Recipe</h1>
+       <p style={paragraphStyle}>
+         Share your favorite recipe with the community! Fill out the form below to add your recipe to our collection.
+       </p>
+       <form>
+         <div>
+           <label htmlFor="recipeName">Recipe Name:</label>
+           <input type="text" id="recipeName" name="recipeName" />
+         </div>
+         <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '15px 0' }}></div>
+         <div>
+           <label htmlFor="ingredients">Ingredients:</label>
+           <textarea id="ingredients" name="ingredients"></textarea>
+         </div>
+         <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '15px 0' }}></div>
+         <div>
+           <label htmlFor="instructions">Instructions:</label>
+           <textarea id="instructions" name="instructions"></textarea>
+         </div>
+         <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '15px 0' }}></div>
+         <button style={{ backgroundColor: '#5A5A5A', border: '1px solid grey', padding: '15px 30px', color: 'white', borderRadius: '8px', fontSize: '17px' }} type="submit">
+           SUBMIT RECIPE
+         </button>
+       </form>
+     </div>
+   </div>
+ );
 }

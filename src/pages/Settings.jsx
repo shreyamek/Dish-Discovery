@@ -3,7 +3,8 @@ import SettingsPage from '../components/SettingsPage';
 
 export const Settings = () => {
   return (
-    <div>Settings    
+    <div>
+    <div className="mainTitle">Settings</div>   
     <SettingsPage />
     </div>
 

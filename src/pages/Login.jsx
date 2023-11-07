@@ -24,39 +24,35 @@ export const Login = (props) => {
         console.log(pass);
     }
     return(
-         <div className="bg" style={{backgroundImage: `url(${background})`}}>
+         <div className="App-header" style={{backgroundImage: `url(${background})`}}>
           <div className="mainTitle"> Dish Discovery </div>
           <div className="sideText"> Make cooking hassle-free. </div>
-          <br></br>
           <div className="smallLogo">
-             <img styles={size} width={100} height={100} src={logo} alt="Logo" />
+             <img styles={size} width={160} height={160} src={logo} alt="Logo" />
               </div>
-              <br></br>
-              <div className="container"style={{backgroundColor: "C6D8A1", opacity: 50}}>
+              <div className="container1"style={{backgroundColor: "C6D8A1", opacity: 50}}>
               <div className="smallTitle"> Welcome Back! </div>
-                <br></br>
-                <div className="buttonClass">
-              <Link to="/home1">Log In</Link>
-              </div>
               <br></br>
             <form onSubmit={handleSubmit}>
             <div className="input1">
-                <label htmlFor="username">Username: </label>
+                <label htmlFor="username" className="sideText">Username: </label>
                 <input  value={username} onChange={(e) => setusername(e.target.value)} type = "username"/>
                 </div>
                 <br></br>
                 <div className="input1"></div>
-                <label htmlFor="password">Password: </label>
+                <label htmlFor="password" className="sideText">Password: </label>
                 <input value={pass} onChange={(e) => setPass(e.target.value)} type = "password" />
             </form>
             <br></br>
             <div className="buttonClass">
             <button>Forgot password</button>
             </div>
-            <br></br>
             <div className="buttonClass">
-            <button onClick={() => props.onFormSwitch('register')}> Don't have an account? Sign up!</button>
-            </div>
+              <Link to="/Home" className="sideText">Log In</Link>
+              </div>
+            <div className="buttonClass">
+            <Link to="/Register" className="sideText">Don't have an account? Sign up!</Link>
+            </div> 
             </div>
             </div>
     )

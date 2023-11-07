@@ -3,20 +3,20 @@ import React from 'react';
 export const About = () => {
   const containerStyle = {
     backgroundColor: '#FFE1EE',
-    padding: '30px',  // Increase padding to make it a bit bigger
+    padding: '70px',  // Increase padding to make it a bit bigger
     borderRadius: '5px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-    maxWidth: '700px',  // Increase the maximum width
+    maxWidth: '800px',  // Increase the maximum width
     margin: '20px auto 0',  // Add margin on top
     color: '#000',  // Set text color to black
   };
 
   const headingStyle = {
-    fontSize: '24px',
+    fontSize: '34px',
   };
 
   const paragraphStyle = {
-    fontSize: '16px',
+    fontSize: '20px',
   };
 
   return (

@@ -7,25 +7,25 @@ export const About = () => {
     backgroundSize: 'cover', 
     backgroundPosition: 'center', 
     backgroundColor: '#FFE1EE',
-    padding: '70px',
+    padding: '0px',
     borderRadius: '5px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
     width: '100vw', 
     height: '100vh',
     color: '#000',
-    position: 'relative', 
+    position: 'center', 
   };
 
   const contentStyle = {
     maxWidth: '800px',
-    margin: '20px auto 0',
-    padding: '20px',
+    margin: '100px auto 0',
+    padding: '30px',
     background: '#ffd3da', 
-    borderRadius: '5px', 
+    borderRadius: '10px', 
   };
 
   const headingStyle = {
-    fontSize: '34px',
+    fontSize: '38px',
   };
 
   const paragraphStyle = {

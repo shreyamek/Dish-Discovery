@@ -33,7 +33,7 @@ export const AddRecipes = () => {
   };
 
   const contentStyle = {
-    maxWidth: '800px',
+    maxWidth: '1000px',
     margin: '50px auto 0',
     padding: '15px',
     background: '#dbead2',

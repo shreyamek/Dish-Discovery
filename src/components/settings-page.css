@@ -19,7 +19,7 @@
     background: transparent;
     border: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
     outline: none;
     align-content: center;
@@ -30,11 +30,11 @@
   }
   
   .collapsed .sidebar {
-    width: 14px;
+    width: 13px;
   }
   
   .collapsed .sidebar .collapse-button {
-    width: 14px; /* Match the collapsed sidebar width */
+    width: 13px; /* Match the collapsed sidebar width */
     text-align: center;
   }
   

@@ -12,10 +12,13 @@ import { About } from './pages/About';
 import background from './BackgroundImage.png';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import { EditProfile } from './pages/EditProfile';
+import { ChakraProvider } from '@chakra-ui/react';
 
 
 function App() {
   return (
+    <ChakraProvider>
     <div className="App">
         <div className="App-header" style={{backgroundImage: `url(${background})`}}>
         </div>
@@ -29,6 +32,7 @@ function App() {
               <Route path="/feed" element={<Feed/>}/>
               <Route path="/savedrecipes" element={<SavedRecipes/>}/>
               <Route path="/profile" element={<Profile/>}/>
+              <Route path="/editprofile" element={<EditProfile/>}/>
               <Route path="/settings" element={<Settings/>}/>
               <Route path="/about" element={<About/>}/>
               <Route path="/addrecipes" element={<AddRecipes/>}/>
@@ -36,7 +40,11 @@ function App() {
             </Routes>
         </header>
       </div>
+      </ChakraProvider>
   );
 }
 
+
 export default App;
+
+//<Route path="/feed" element={<Feed/>}/>

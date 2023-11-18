@@ -4,3 +4,35 @@
     font-size: 200%;
     font-weight: 700%;
   }
+
+  .head2 {
+    font-family: 'Roboto';
+    padding-top: 1%;
+    font-size: 100%;
+    font-weight: 1000%;
+  }
+
+  .head3 {
+    font-family: 'Roboto';
+    padding-top: 1%;
+    font-size: 50%;
+    font-weight: 500%;
+    font-style: italic;
+  }
+
+  .container3 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* This makes the container take up the full height of the viewport */
+  }
+
+  .doneButton {
+    position:absolute;
+    color: black;
+    width: 300px;
+    height: 50px;
+    background-color: #ea9393; /* Light green color */
+    border-radius: 10px; /* Adjust the border-radius to control the roundness of the corners */
+  }

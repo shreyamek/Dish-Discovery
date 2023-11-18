@@ -1,9 +1,10 @@
 //Preethika Somarapu
 import React, {useState} from "react";
 import background from '../BackgroundImage.png';
+import Home from "./Home";
+import { useNavigate, Link} from "react-router-dom";
 import './Login.css'
 import logo from '../logo1.png';
-import { Link } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 
@@ -16,7 +17,6 @@ const firebaseConfig = {
     appId: "1:225883867893:web:1cf70aeafba973dcbb13bc",
     measurementId: "G-2Q95Y8MLCE"
   };
-  
   // Initialize Firebase
 const fb = initializeApp(firebaseConfig);
 const auth = getAuth();
@@ -29,6 +29,7 @@ const size = {
 
 //the signup page for dish discovery
 export const Register = (props) => {
+    const history = useNavigate();
     //takes in the user's email
     const [email, setEmail] = useState('');
     //takes in the user's password
@@ -40,6 +41,7 @@ export const Register = (props) => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log(userCredential);
+            history('/Home');
         }).catch((error) => {
             console.log(error);
         })

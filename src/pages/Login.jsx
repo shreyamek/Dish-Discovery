@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 import logo from '../logo1.png';
 import Home from "./Home";
 import './Login.css'
-import { Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
@@ -32,6 +32,7 @@ const auth = getAuth();
 
 //the login page for dish discovery
 export const Login = (props) => {
+    const nav = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
 
@@ -40,6 +41,7 @@ export const Login = (props) => {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             console.log(userCredential);
+            nav('/Home');
         }).catch((error) => {
             console.log(error);
         })

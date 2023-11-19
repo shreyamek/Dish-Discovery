@@ -37,6 +37,7 @@ export const Register = (props) => {
     //takes in the user's password
     const [password, setPass] = useState('');
     const [visible, setVisible] = useState(true);
+    const [error, setError] = useState(null);
 
     //for the buttons
     const handleSubmit = (e) => {
@@ -47,6 +48,7 @@ export const Register = (props) => {
             history('/Home');
         }).catch((error) => {
             console.log(error);
+            setError('There is already a user associated with this email, please log in!');
         })
     }
     return(
@@ -79,6 +81,7 @@ export const Register = (props) => {
                 <div className="small-text"> A password must have at least 6 characters</div>
                 </div>
                 <div></div>
+                {error && <p className="medium-text" style={{ color: 'red' }}>{error}</p>}
                 <button type="submit">Register</button>
             </form>
             <div className="buttonClass">

@@ -39,6 +39,7 @@ export const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
     const [visible, setVisible] = useState(true);
+    const [error, setError] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -48,6 +49,7 @@ export const Login = (props) => {
             nav('/Home');
         }).catch((error) => {
             console.log(error);
+            setError('Authentication failed. Please check your email or password.');
         })
     }
     return(
@@ -76,6 +78,7 @@ export const Login = (props) => {
                 onClick={() => setVisible(!visible)}
                 />
                 <div></div>
+                {error && <p className="medium-text" style={{ color: 'red' }}>{error}</p>}
                 <button type="submit">Log In</button>
             </form>
             <div className="buttonClass">

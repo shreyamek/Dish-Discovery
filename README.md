@@ -12,7 +12,9 @@ Technology Used: React.js, CSS, Chakra UI
 6. Import Chakra UI: npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion @chakra-ui/icons
 7. Run the application: npm start
 
-| Command | Description |
-| --- | --- |
-| git status | List all new or modified files |
-| git diff | Show file differences that haven't been stage
+| Name | Test Case ID | Test Case |
+| --- | --- | --- |
+| Shreya | 01 | Frequently Asked Questions | 
+| Shreya | 02 | Popular Recipes Generated |
+| Shreya | 03 | Search for Recipes using Ingredients |
+| Shreya | 04 | Invalid Search Requests Result in Error Page |

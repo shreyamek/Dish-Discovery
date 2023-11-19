@@ -7,6 +7,8 @@ import './Login.css'
 import logo from '../logo1.png';
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import { ViewIcon, ViewOffIcon} from '@chakra-ui/icons'
+import {Center, IconButton} from '@chakra-ui/react'
 
 const firebaseConfig = {
     apiKey: "AIzaSyDrGK5gAZTQn8uGIH4fwPLpU8hVmU83UTY",
@@ -34,6 +36,7 @@ export const Register = (props) => {
     const [email, setEmail] = useState('');
     //takes in the user's password
     const [password, setPass] = useState('');
+    const [visible, setVisible] = useState(true);
 
     //for the buttons
     const handleSubmit = (e) => {
@@ -52,24 +55,30 @@ export const Register = (props) => {
             <div className="mainTitle"> Dish Discovery </div>
           <div className="sideText"> Make cooking hassle-free. </div>
           <br></br>
+          <Center>
           <div className="smallLogo">
              <img styles={size} width={160} height={160} src={logo} alt="Logo" />
                 </div>
+                </Center>
           <div className ="container1" style={{backgroundColor: "C6D8A1", opacity: 50}}> 
           <div className="smallTitle"> Welcome To Dish Discovery! </div>
-          <br></br>
           <form onSubmit={handleSubmit}>
           <div className="input1">
                 <label htmlFor="email" className="sideText">Enter your email: </label>
-                <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} type = "email"/>
+                <input className="medium-text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} type = "email" placeholder="myemail@gmail.com"/>
                 </div>
-                <br></br>
                 <div className="input1">
                 <label htmlFor="password" className="sideText">Password: </label>
-                <input id="password" value={password} onChange={(e) => setPass(e.target.value)} type = "password" />
+                <input className="medium-text" id="password" value={password} onChange={(e) => setPass(e.target.value)} type = {visible ? "text" : "password"} placeholder="******"/>
+                <IconButton
+                aria-label={visible ? 'Hide' : 'Show'}
+                colorScheme='black'
+                icon={visible ? <ViewIcon  /> : <ViewOffIcon  />}
+                onClick={() => setVisible(!visible)}
+                />
+                <div className="small-text"> A password must have at least 6 characters</div>
                 </div>
                 <div></div>
-                <br></br>
                 <button type="submit">Register</button>
             </form>
             <div className="buttonClass">

@@ -8,6 +8,9 @@ import './Login.css'
 import {Link} from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {Center} from '@chakra-ui/react'
+import { IconButton } from '@chakra-ui/react'
+import { ViewIcon, ViewOffIcon} from '@chakra-ui/icons'
 
 
 const firebaseConfig = {
@@ -35,6 +38,7 @@ export const Login = (props) => {
     const nav = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPass] = useState('');
+    const [visible, setVisible] = useState(true);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -50,23 +54,28 @@ export const Login = (props) => {
          <div className="App-header" style={{backgroundImage: `url(${background})`}}>
           <div className="mainTitle"> Dish Discovery </div>
           <div className="sideText"> Make cooking hassle-free. </div>
+          <Center>
           <div className="smallLogo">
              <img styles={size} width={160} height={160} src={logo} alt="Logo" />
               </div>
+              </Center>
               <div className="container1"style={{backgroundColor: "C6D8A1", opacity: 50}}>
               <div className="smallTitle"> Welcome Back! </div>
-              <br></br>
             <form onSubmit={handleSubmit}>
             <div className="input1">
                 <label htmlFor="email" className="sideText"> Email: </label>
-                <input id="email" value={email} onChange={(e) => setEmail(e.target.value)} type = "email"/>
+                <input className="medium-text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} type = "email" placeholder="myemail@gmail.com"/>
                 </div>
-                <br></br>
                 <div className="input1"></div>
                 <label htmlFor="password" className="sideText">Password: </label>
-                <input id="password" value={password} onChange={(e) => setPass(e.target.value)} type = "password" />
+                <input className="medium-text" id="password" value={password} onChange={(e) => setPass(e.target.value)} type = {visible ? "text" : "password"} placeholder="******"/>
+                <IconButton
+                aria-label={visible ? 'Hide' : 'Show'}
+                colorScheme='black'
+                icon={visible ? <ViewIcon  /> : <ViewOffIcon />}
+                onClick={() => setVisible(!visible)}
+                />
                 <div></div>
-                <br></br>
                 <button type="submit">Log In</button>
             </form>
             <div className="buttonClass">

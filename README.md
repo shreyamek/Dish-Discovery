@@ -11,3 +11,8 @@ Technology Used: React.js, CSS, Chakra UI
 5. Import React-splide: npm install @splidejs/react-splide
 6. Import Chakra UI: npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion @chakra-ui/icons
 7. Run the application: npm start
+
+| Command | Description |
+| --- | --- |
+| git status | List all new or modified files |
+| git diff | Show file differences that haven't been stage

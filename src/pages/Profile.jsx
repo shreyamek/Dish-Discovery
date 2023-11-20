@@ -1,10 +1,10 @@
-import React from 'react';
 import background from '../BackgroundImage.png';
 import circle from '../ProfilePic.png';
 import './Profile.css';
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useRecipeContext } from '../pages/RecipeContext';
 
-//const [activeIndex, setActiveIndex] = useState(0);
 
 const user = {
   name: '@User1',
@@ -13,6 +13,15 @@ const user = {
 
 //Laya
 export const Profile = () => {
+  const { recipes } = useRecipeContext();
+
+  const recipeBoxStyle = {
+    background: '#E0E0E0', 
+    padding: '10px',
+    margin: '10px 0',
+    borderRadius: '10px',
+   
+  };
 
   return (
     <div>
@@ -41,7 +50,27 @@ export const Profile = () => {
         <div className="head2"> Bookmarks </div>
       </div>
       <div className="rectangleBar2">
-        <div className="head2"> Your Recipies </div>
+        <div className="head2"> Your Recipes </div>
+        <ul>
+          {recipes.map((recipe, index) => (
+            <li key={index} style={recipeBoxStyle}>
+              <strong>{recipe.recipeName}</strong>
+              <ul>
+                {recipe.ingredients.map((ingredient, ingIndex) => (
+                  <li key={ingIndex}>{ingredient}</li>
+                ))}
+              </ul>
+              <p>
+                {recipe.instruction.split('\n').map((line, lineIndex) => (
+                  <span key={lineIndex}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
       <div className="rectangleBar3">
         <div className="head2"> Folders </div>
@@ -49,11 +78,6 @@ export const Profile = () => {
       <div className="rectangleBar4">
         <div className="head2"> About Me </div>
       </div>
-
     </div>
-
-    
-      
-
   )
 }

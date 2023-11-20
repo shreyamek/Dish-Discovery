@@ -1,70 +1,170 @@
 import backgroundImage from '../BackgroundImage.png';
-import React from 'react';
-
+import React, { useState } from 'react';
+import { useRecipeContext } from '../pages/RecipeContext';
 
 export const AddRecipes = () => {
- const containerStyle = {
-   backgroundImage: `url(${backgroundImage})`,
-   backgroundSize: 'cover',
-   backgroundPosition: 'center',
-   backgroundColor: '#FFE1EE', // Change the background color
-   padding: '70px',
-   borderRadius: '5px',
-   boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-   width: '100vw',
-   height: '100vh',
-   color: '#000',
-   position: 'relative',
- };
+  const { addRecipe } = useRecipeContext();
+  const [recipeName, setRecipeName] = useState('');
+  const [ingredient, setIngredient] = useState('');
+  const [ingredients, setIngredients] = useState([]);
+  const [instruction, setInstruction] = useState('');
 
 
- const contentStyle = {
-   maxWidth: '800px',
-   margin: '20px auto 0',
-   padding: '20px',
-   background: '#dbead2',
-   borderRadius: '5px',
- };
+  const instructionInputStyle = {
+    width: '85%',
+    height: '20vh',
+    resize: 'none', 
+  };
+
+  const inputStyle = {
+    width: '20%', 
+    height: '2.2vh',
+    marginLeft: '5px',
+  };
+
+  const containerStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundColor: '#FFE1EE',
+    padding: '0px',
+    borderRadius: '0px',
+    boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+    width: '100vw',
+    height: '100vh',
+    color: '#000',
+    position: 'center',
+  };
+
+  const contentStyle = {
+    maxWidth: '1000px',
+    margin: '50px auto 0',
+    padding: '15px',
+    background: '#dbead2',
+    borderRadius: '10px',
+  };
+
+  const headingStyle = {
+    fontSize: '38px',
+  };
+
+  const paragraphStyle = {
+    fontSize: '20px',
+  };
+
+  const handleRecipeNameChange = (e) => {
+    setRecipeName(e.target.value);
+  };
+
+  const handleIngredientChange = (e) => {
+    setIngredient(e.target.value);
+  };
+
+  const handleAddIngredient = () => {
+    if (ingredient.trim() !== '') {
+      setIngredients([...ingredients, ingredient]);
+      setIngredient('');
+    }
+  };
+
+  const handleInstructionChange = (e) => {
+    setInstruction(e.target.value);
+  };
 
 
- const headingStyle = {
-   fontSize: '34px',
- };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newRecipe = {
+      recipeName,
+      ingredients,
+      instruction,
+    };
+    addRecipe(newRecipe);
 
-
- const paragraphStyle = {
-   fontSize: '20px',
- };
-
-
- return (
-   <div style={containerStyle}>
-     <div style={contentStyle}>
-       <h1 style={headingStyle}>Add Your Recipe</h1>
-       <p style={paragraphStyle}>
-         Share your favorite recipe with the community! Fill out the form below to add your recipe to our collection.
-       </p>
-       <form>
-         <div>
-           <label htmlFor="recipeName">Recipe Name:</label>
-           <input type="text" id="recipeName" name="recipeName" />
-         </div>
-         <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '15px 0' }}></div>
-         <div>
-           <label htmlFor="ingredients">Ingredients:</label>
-           <textarea id="ingredients" name="ingredients"></textarea>
-         </div>
-         <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '15px 0' }}></div>
-         <div>
-           <label htmlFor="instructions">Instructions:</label>
-           <textarea id="instructions" name="instructions"></textarea>
-         </div>
-         <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '15px 0' }}></div>
-         <button style={{ backgroundColor: '#5A5A5A', border: '1px solid grey', padding: '15px 30px', color: 'white', borderRadius: '8px', fontSize: '17px' }} type="submit">
-           SUBMIT RECIPE
-         </button>
-       </form>
-     </div>
-   </div>
- );
-}
+        setRecipeName('');
+    setIngredients([]);
+    setInstruction('');
+  };
+  
+  return (
+    <div style={containerStyle}>
+      <div style={contentStyle}>
+        <h1 style={headingStyle}>Add Your Recipe</h1>
+        <p style={paragraphStyle}>
+          Share your favorite recipe with the community! Fill out the form below to add your recipe to our collection.
+        </p>
+        <form onSubmit={handleSubmit}>
+          <div>
+          <label htmlFor="recipeName">Recipe Name:</label>
+            <input
+              style={inputStyle} 
+              type="text"
+              id="recipeName"
+              name="recipeName"
+              value={recipeName}
+              onChange={handleRecipeNameChange}
+            />
+          </div>
+          <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '15px 0' }}></div>
+          <div>
+            <label htmlFor="ingredients">Ingredients:</label>
+            <input
+              style={inputStyle} 
+              type="text"
+              id="ingredient"
+              name="ingredient"
+              value={ingredient}
+              onChange={handleIngredientChange}
+            />
+            <button
+              style={{
+                backgroundColor: '#5A5A5A',
+                border: '1px solid grey',
+                padding: '10px',
+                color: 'white',
+                borderRadius: '5px',
+                fontSize: '14px', 
+                marginLeft: '10px',
+              }}
+              type="button"
+              onClick={handleAddIngredient}
+            >
+              ADD
+            </button>
+            <ul>
+              {ingredients.map((ing, index) => (
+                <li key={index} style={{ fontSize: '14px' }}>{ing}</li> 
+              ))}
+            </ul>
+          </div>
+          <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '1px 0' }}></div>
+          <div>
+            <label htmlFor="instructions">Instructions:</label>
+            <textarea
+              style={instructionInputStyle} 
+              id="instructions"
+              name="instructions"
+              value={instruction}
+              onChange={handleInstructionChange}
+            />
+          </div>
+          <div style={{ backgroundColor: '#dbead2', height: '2px', margin: '15px 0' }}></div>
+          <button
+            style={{
+              backgroundColor: '#5A5A5A',
+              border: '1px solid grey',
+              padding: '15px 30px',
+              color: 'white',
+              borderRadius: '8px',
+              fontSize: '19px',
+              marginBottom: '50px',
+            }}
+            type="submit"
+          >
+          SUBMIT RECIPE
+        </button>
+      </form>
+    </div>
+  </div>
+);
+};

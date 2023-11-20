@@ -5,7 +5,7 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import theme from './theme'
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
-
+import { RecipeProvider } from './pages/RecipeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,4 +15,13 @@ root.render(
       <App />
     </BrowserRouter>
   </React.StrictMode>
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <RecipeProvider>
+      <App />
+    </RecipeProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );

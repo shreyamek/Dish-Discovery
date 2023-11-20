@@ -14,10 +14,11 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Searched from './pages/Searched';
 import { ChakraProvider } from '@chakra-ui/react';
-
+import { RecipeProvider } from './pages/RecipeContext';
 
 function App() {
   return (
+    <RecipeProvider>
     <div className="App">
         <div className="App-header" style={{backgroundImage: `url(${background})`}}>
         </div>
@@ -39,6 +40,7 @@ function App() {
             </Routes>
         </header>
       </div>
+      </RecipeProvider>
   );
 }
 

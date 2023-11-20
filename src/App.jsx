@@ -12,6 +12,8 @@ import { About } from './pages/About';
 import background from './BackgroundImage.png';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import Searched from './pages/Searched';
+import { ChakraProvider } from '@chakra-ui/react';
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
               <Route path="/about" element={<About/>}/>
               <Route path="/addrecipes" element={<AddRecipes/>}/>
               <Route path="/recipe/:recipeId" element={<RecipeDetail />} />
+              <Route path="/searched/:search" element={<Searched/>} />
             </Routes>
         </header>
       </div>

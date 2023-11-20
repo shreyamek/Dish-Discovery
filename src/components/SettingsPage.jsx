@@ -11,7 +11,8 @@ import {
   ModalCloseButton,
   useDisclosure
 } from '@chakra-ui/react';
-import { EditIcon } from '@chakra-ui/icons'
+import { EditIcon, ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
+import { IconButton } from '@chakra-ui/react'
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
@@ -58,7 +59,7 @@ const SettingsPage = () => {
     <div className={`settings-page ${sidebarCollapsed ? 'collapsed' : ''}`}>
       <div className="sidebar">
         <button className="collapse-button" onClick={handleToggleSidebar}>
-          {sidebarCollapsed ? '►' : '◄'}
+          {sidebarCollapsed ? <ArrowRightIcon /> : <ArrowLeftIcon />}
         </button>
         <ul>
           <li>
@@ -104,19 +105,20 @@ const SettingsPage = () => {
 
       <div className="content">
         <section id="account-info" className={activeSection === 'account-info' ? 'visible' : 'hidden'}>
-          <h2>Account Info</h2>
+          
           <div className="content-box">
+          <h2>Account Info</h2>
   <div className="profile-icon">
     <img src="profile-image.jpg" alt="User Profile" />
   </div>
   <div className="user-details">
     <div className="detail">
       <p>Username: JohnDoe</p>
-      <span className="change-icon"><EditIcon /></span>
+      <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />} onClick={() => { navigate('/profile');}}/></span>
     </div>
     <div className="detail">
       <p>Email: john.doe@example.com</p>
-      <span className="change-icon"><EditIcon /></span>
+      <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />} onClick={() => { navigate('/profile');}}/></span>
     </div>
     <div className="detail">
       <p>Linked Social Media:</p>
@@ -124,11 +126,11 @@ const SettingsPage = () => {
     <ul className="social-media-list">
       <li>
         <p>Twitter: @johndoe</p>
-        <span className="change-icon"><EditIcon /></span>
+        <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />}/></span>
       </li>
       <li>
         <p>Instagram: @johndoe_photos</p>
-        <span className="change-icon"><EditIcon /></span>
+        <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />}/></span>
       </li>
     </ul>
   </div>

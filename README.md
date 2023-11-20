@@ -32,6 +32,6 @@ Technology Used: React.js, CSS, Chakra UI
 | Laya      | 15           | User should be able to add dietary restrictions or allergies                |
 | Laya      | 16           | User can create a display name (username) that will show up on profile page |
 | Laya      | 17           | User can create an about me section (bio) that will show up on profile page |
-| Aditya    | 18           | User can expand and collapse settings sidebar with arrow button             |
-| Aditya    | 19           | User can click the links in the sidebar and get navigated to different page |
-| Aditya    | 20           | Log Out In Settings Page                                                    |
+| Aditya    | 18           | Settings Side Bar Collapse/Expand Button                                    |
+| Aditya    | 19           | Side Bar Buttons/Links                                                      |
+| Aditya    | 20           | Log Out Settings Page                                                       |

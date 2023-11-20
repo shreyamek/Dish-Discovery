@@ -23,4 +23,8 @@ Technology Used: React.js, CSS, Chakra UI
 | Preethika | 07 | Log In and Registration Redirection |
 | Preethika | 08 | Show and Hide Password |
 | Preethika | 09 | Login and Register Error Message |
+| Varsha | 10 | About Page |
+| Varsha | 11 | Add Recipes Box |
+| Varsha | 12 | Save the newly added Recipe in the Profile Page | 
+| Varsha | 13 | Ingredients Show up in a Line as They are Added | 
 

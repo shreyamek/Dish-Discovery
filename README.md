@@ -15,10 +15,10 @@ Technology Used: React.js, CSS, Chakra UI
 
 | Name      | Test Case ID | Test Case                                                                   |
 | --------- | ------------ | --------------------------------------------------------------------------- |
-| Shreya    | 01           | Frequently Asked Questions                                                  | 
-| Shreya    | 02           | Popular Recipes Generated                                                   |
-| Shreya    | 03           | Search for Recipes using Ingredients                                        |
-| Shreya    | 04           | Invalid Search Requests Result in Error Page                                |
+| Shreya    | 01           | Frequently Asked Questions Expands to Display Answers| 
+| Shreya    | 02           | Popular Recipes Generated for Every Page Refresh|
+| Shreya    | 03           | Search for Recipes using the Search Bar and Displays Results                                        |
+| Shreya    | 04           | Invalid Search Requests Result in "No Recipes Found"                                |
 | Preethika | 05           | Registering Account through Registration Page                               |
 | Preethika | 06           | Switching Between Log In and Registration Page                              |
 | Preethika | 07           | Log In and Registration Redirection                                         |
@@ -32,5 +32,6 @@ Technology Used: React.js, CSS, Chakra UI
 | Laya      | 15           | User should be able to add dietary restrictions or allergies                |
 | Laya      | 16           | User can create a display name (username) that will show up on profile page |
 | Laya      | 17           | User can create an about me section (bio) that will show up on profile page |
-
-
+| Aditya    | 18           | User can expand and collapse settings sidebar with arrow button             |
+| Aditya    | 19           | User can click the links in the sidebar and get navigated to different page |
+| Aditya    | 20           | Log Out In Settings Page                                                    |

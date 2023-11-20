@@ -40,7 +40,7 @@ function Feed() {
           ))}
         </ul>
       ) : (
-        <div>No recipes found</div>
+        <div>Loading your feed...</div>
       )}
     </div>
   );

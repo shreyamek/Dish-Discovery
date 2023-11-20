@@ -1,16 +1,57 @@
 import React, { useState } from 'react';
 import './settings-page.css';
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure
+} from '@chakra-ui/react';
+import { EditIcon } from '@chakra-ui/icons'
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
 
 const SettingsPage = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('account-info');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const handleSectionClick = (sectionId) => {
-    setActiveSection(sectionId);
+    if (sectionId === 'logout') {
+      onOpen();
+    } else {
+      setActiveSection(sectionId);
+    }
   };
 
   const handleToggleSidebar = () => {
     setSidebarCollapsed(!sidebarCollapsed);
+  };
+
+  const handleLogout = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        console.log('User signed out');
+      })
+      .catch((error) => {
+        // An error happened.
+        console.error('Error signing out:', error.message);
+      });
+
+    onClose();
+    // After the modal is closed, update the active section
+    setActiveSection('logout');
+
+    // Redirect to the login page
+    navigate('/'); // Replace '/login' with the actual path to your login page
   };
 
   return (
@@ -45,36 +86,37 @@ const SettingsPage = () => {
               onClick={() => handleSectionClick('help-support')}
             >
               Help & Support
-             
             </a>
           </li>
-          <br></br>
+          <br />
           <li>
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a
-              href="#logout"
               className={activeSection === 'logout' ? 'active' : ''}
               onClick={() => handleSectionClick('logout')}
             >
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               Logout
             </a>
           </li>
         </ul>
       </div>
+
       <div className="content">
         <section id="account-info" className={activeSection === 'account-info' ? 'visible' : 'hidden'}>
           <h2>Account Info</h2>
-          <div className="profile-info">
+          <div className="content-box">
   <div className="profile-icon">
     <img src="profile-image.jpg" alt="User Profile" />
   </div>
   <div className="user-details">
     <div className="detail">
       <p>Username: JohnDoe</p>
-      <span className="change-icon">✏️</span>
+      <span className="change-icon"><EditIcon /></span>
     </div>
     <div className="detail">
       <p>Email: john.doe@example.com</p>
-      <span className="change-icon">✏️</span>
+      <span className="change-icon"><EditIcon /></span>
     </div>
     <div className="detail">
       <p>Linked Social Media:</p>
@@ -82,19 +124,19 @@ const SettingsPage = () => {
     <ul className="social-media-list">
       <li>
         <p>Twitter: @johndoe</p>
-        <span className="change-icon">✏️</span>
+        <span className="change-icon"><EditIcon /></span>
       </li>
       <li>
         <p>Instagram: @johndoe_photos</p>
-        <span className="change-icon">✏️</span>
+        <span className="change-icon"><EditIcon /></span>
       </li>
     </ul>
   </div>
 </div>
-
-        </section>
+</section>
 
         <section id="privacy-security" className={activeSection === 'privacy-security' ? 'visible' : 'hidden'}>
+        <div className="content-box">
           <h2>Privacy & Security</h2>
 <p>
   Privacy and Security Policy
@@ -152,10 +194,11 @@ const SettingsPage = () => {
   <br /><br />
   Thank you for being part of the Dish Discovery community, and trust that we are committed to providing a safe and enjoyable experience for all our users.
 </p>
-
+</div>
         </section>
 
         <section id="help-support" className={activeSection === 'help-support' ? 'visible' : 'hidden'}>
+        <div className="content-box">
           <h2>Help & Support</h2>
           <p>
  
@@ -195,16 +238,33 @@ const SettingsPage = () => {
 
   At Dish Discovery, we're committed to helping you find joy and inspiration in cooking. Our Help and Support resources are designed to assist you on your culinary journey. Whether you're an experienced chef or just starting, we're here to make your experience memorable.
 </p>
-
+</div>
  </section>
 
-<section id="logout" className={activeSection === 'logout' ? 'visible' : 'hidden'}>
-  <h2>Logout</h2>
-  <p>Sign out of your account to protect your privacy and data.</p>
-</section>
-
-        </div>
-      </div>
+ <section id="logout" className={activeSection === 'logout' ? 'visible' : 'hidden'}>
+          <div className="popUp">
+            <Modal isOpen={isOpen} onClose={onClose}>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader>Log Out</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  <p>Are you sure you want to log out?</p>
+                </ModalBody>
+                <ModalFooter>
+                  <Button variant="link" mr={3} onClick={onClose}>
+                    Close
+                  </Button>
+                  <Button colorScheme="red" onClick={handleLogout}>
+                    Log Out
+                  </Button>
+                </ModalFooter>
+              </ModalContent>
+            </Modal>
+          </div>
+        </section>
+    </div>
+    </div>
     );
   };
 

@@ -35,3 +35,8 @@ Technology Used: React.js, CSS, Chakra UI
 | Aditya    | 18           | Settings Side Bar Collapse/Expand Button                                    |
 | Aditya    | 19           | Side Bar Buttons/Links                                                      |
 | Aditya    | 20           | Log Out Settings Page                                                       |
+| Larry     | 21           | Recommended Recipes                                                         |
+| Larry     | 22           | Previous and Next Buttons                                                   |
+| Larry     | 23           | Recipe Tags                                                                 |
+| Larry     | 24           | Recipe Page                                                                 |
+

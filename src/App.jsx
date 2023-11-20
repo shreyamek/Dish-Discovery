@@ -12,10 +12,11 @@ import { About } from './pages/About';
 import background from './BackgroundImage.png';
 import Register from './pages/Register';
 import Login from './pages/Login';
-
+import { RecipeProvider } from './pages/RecipeContext';
 
 function App() {
   return (
+    <RecipeProvider>
     <div className="App">
         <div className="App-header" style={{backgroundImage: `url(${background})`}}>
         </div>
@@ -36,6 +37,7 @@ function App() {
             </Routes>
         </header>
       </div>
+      </RecipeProvider>
   );
 }
 

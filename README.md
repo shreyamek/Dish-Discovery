@@ -13,19 +13,24 @@ Technology Used: React.js, CSS, Chakra UI
 7. Import Chakra UI: npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion @chakra-ui/icons
 8. Run the application: npm start
 
-| Name | Test Case ID | Test Case |
-| --- | --- | --- |
-| Shreya | 01 | Frequently Asked Questions | 
-| Shreya | 02 | Popular Recipes Generated |
-| Shreya | 03 | Search for Recipes using Ingredients |
-| Shreya | 04 | Invalid Search Requests Result in Error Page |
-| Preethika | 05 | Registering Account through Registration Page |
-| Preethika | 06 | Switching Between Log In and Registration Page |
-| Preethika | 07 | Log In and Registration Redirection |
-| Preethika | 08 | Show and Hide Password |
-| Preethika | 09 | Login and Register Error Message |
-| Varsha | 10 | About Page |
-| Varsha | 11 | Add Recipes Box |
-| Varsha | 12 | Save the newly added Recipe in the Profile Page | 
-| Varsha | 13 | Ingredients Show up in a Line as They are Added | 
+| Name      | Test Case ID | Test Case                                                                   |
+| --------- | ------------ | --------------------------------------------------------------------------- |
+| Shreya    | 01           | Frequently Asked Questions                                                  | 
+| Shreya    | 02           | Popular Recipes Generated                                                   |
+| Shreya    | 03           | Search for Recipes using Ingredients                                        |
+| Shreya    | 04           | Invalid Search Requests Result in Error Page                                |
+| Preethika | 05           | Registering Account through Registration Page                               |
+| Preethika | 06           | Switching Between Log In and Registration Page                              |
+| Preethika | 07           | Log In and Registration Redirection                                         |
+| Preethika | 08           | Show and Hide Password                                                      |
+| Preethika | 09           | Login and Register Error Message                                            |
+| Varsha    | 10           | About Page                                                                  |
+| Varsha    | 11           | Add Recipes Box                                                             |
+| Varsha    | 12           | Save the newly added Recipe in the Profile Page                             | 
+| Varsha    | 13           | Ingredients Show up in a Line as They are Added                             | 
+| Laya      | 14           | Edit profile from the profile page                                          |
+| Laya      | 15           | User should be able to add dietary restrictions or allergies                |
+| Laya      | 16           | User can create a display name (username) that will show up on profile page |
+| Laya      | 17           | User can create an about me section (bio) that will show up on profile page |
+
 

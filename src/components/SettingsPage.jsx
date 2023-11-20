@@ -1,3 +1,4 @@
+//Aditya Sajeev
 import React, { useState } from 'react';
 import './settings-page.css';
 import {
@@ -15,11 +16,14 @@ import { EditIcon, ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import { useProfile } from '../pages/ProfileContext';
+import profilepic from '../ProfilePic.png';
 
 const SettingsPage = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('account-info');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const { profileData } = useProfile();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -52,7 +56,7 @@ const SettingsPage = () => {
     setActiveSection('logout');
 
     // Redirect to the login page
-    navigate('/'); // Replace '/login' with the actual path to your login page
+    navigate('/');
   };
 
   return (
@@ -109,30 +113,20 @@ const SettingsPage = () => {
           <div className="content-box">
           <h2>Account Info</h2>
   <div className="profile-icon">
-    <img src="profile-image.jpg" alt="User Profile" />
+    <img src={profilepic} alt="User Profile Pic" />
   </div>
   <div className="user-details">
     <div className="detail">
-      <p>Username: JohnDoe</p>
-      <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />} onClick={() => { navigate('/profile');}}/></span>
+      <p>Username: {profileData.userName} </p>
+      <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />} onClick={() => { navigate('/editprofile');}}/></span>
     </div>
     <div className="detail">
-      <p>Email: john.doe@example.com</p>
-      <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />} onClick={() => { navigate('/profile');}}/></span>
+      <p>Email: sage23@gmail.com</p>
+      <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />} onClick={() => { navigate('/editprofile');}}/></span>
     </div>
     <div className="detail">
       <p>Linked Social Media:</p>
     </div>
-    <ul className="social-media-list">
-      <li>
-        <p>Twitter: @johndoe</p>
-        <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />}/></span>
-      </li>
-      <li>
-        <p>Instagram: @johndoe_photos</p>
-        <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />}/></span>
-      </li>
-    </ul>
   </div>
 </div>
 </section>

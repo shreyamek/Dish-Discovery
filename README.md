@@ -15,10 +15,10 @@ Technology Used: React.js, CSS, Chakra UI
 
 | Name      | Test Case ID | Test Case                                                                   |
 | --------- | ------------ | --------------------------------------------------------------------------- |
-| Shreya    | 01           | Frequently Asked Questions                                                  | 
-| Shreya    | 02           | Popular Recipes Generated                                                   |
-| Shreya    | 03           | Search for Recipes using Ingredients                                        |
-| Shreya    | 04           | Invalid Search Requests Result in Error Page                                |
+| Shreya    | 01           | Frequently Asked Questions Expands to Display Answers| 
+| Shreya    | 02           | Popular Recipes Generated for Every Page Refresh|
+| Shreya    | 03           | Search for Recipes using the Search Bar and Displays Results                                        |
+| Shreya    | 04           | Invalid Search Requests Result in "No Recipes Found"                                |
 | Preethika | 05           | Registering Account through Registration Page                               |
 | Preethika | 06           | Switching Between Log In and Registration Page                              |
 | Preethika | 07           | Log In and Registration Redirection                                         |

@@ -37,6 +37,6 @@ Technology Used: React.js, CSS, Chakra UI
 | Aditya    | 20           | Log Out Settings Page                                                       |
 | Larry     | 21           | Recommended Recipes                                                         |
 | Larry     | 22           | Previous and Next Buttons                                                   |
-| Larry     | 23           | Recipe Tags                                                                 |
+| Larry     | 23           | No More Recipes Will Show on Feed Page                                                                 |
 | Larry     | 24           | Recipe Page                                                                 |
 

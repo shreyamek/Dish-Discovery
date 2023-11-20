@@ -15,11 +15,13 @@ import Login from './pages/Login';
 import Searched from './pages/Searched';
 import { ChakraProvider } from '@chakra-ui/react';
 import { RecipeProvider } from './pages/RecipeContext';
+import { ProfileProvider } from './pages/ProfileContext';
 
 function App() {
   return (
     <RecipeProvider>
-    <div className="App">
+      <ProfileProvider>
+      <div className="App">
         <div className="App-header" style={{backgroundImage: `url(${background})`}}>
         </div>
         <header className="App-header">
@@ -40,6 +42,7 @@ function App() {
             </Routes>
         </header>
       </div>
+      </ProfileProvider>
       </RecipeProvider>
   );
 }

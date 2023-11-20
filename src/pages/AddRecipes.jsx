@@ -1,21 +1,25 @@
 import backgroundImage from '../BackgroundImage.png';
 import React, { useState } from 'react';
+import { useRecipeContext } from '../pages/RecipeContext';
 
 export const AddRecipes = () => {
+  const { addRecipe } = useRecipeContext();
   const [recipeName, setRecipeName] = useState('');
   const [ingredient, setIngredient] = useState('');
   const [ingredients, setIngredients] = useState([]);
   const [instruction, setInstruction] = useState('');
 
+
   const instructionInputStyle = {
-    width: '90%',
+    width: '85%',
     height: '20vh',
     resize: 'none', 
   };
 
   const inputStyle = {
     width: '20%', 
-    height: '2vh',
+    height: '2.2vh',
+    marginLeft: '5px',
   };
 
   const containerStyle = {
@@ -70,11 +74,16 @@ export const AddRecipes = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Recipe Submitted:', {
+    const newRecipe = {
       recipeName,
       ingredients,
       instruction,
-    });
+    };
+    addRecipe(newRecipe);
+
+        setRecipeName('');
+    setIngredients([]);
+    setInstruction('');
   };
   
   return (
@@ -100,7 +109,7 @@ export const AddRecipes = () => {
           <div>
             <label htmlFor="ingredients">Ingredients:</label>
             <input
-              style={inputStyle} // Apply the style here
+              style={inputStyle} 
               type="text"
               id="ingredient"
               name="ingredient"
@@ -114,7 +123,7 @@ export const AddRecipes = () => {
                 padding: '10px',
                 color: 'white',
                 borderRadius: '5px',
-                fontSize: '12px', 
+                fontSize: '14px', 
                 marginLeft: '10px',
               }}
               type="button"
@@ -124,7 +133,7 @@ export const AddRecipes = () => {
             </button>
             <ul>
               {ingredients.map((ing, index) => (
-                <li key={index} style={{ fontSize: '14px' }}>{ing}</li> // Adjusted font size
+                <li key={index} style={{ fontSize: '14px' }}>{ing}</li> 
               ))}
             </ul>
           </div>
@@ -147,7 +156,8 @@ export const AddRecipes = () => {
               padding: '15px 30px',
               color: 'white',
               borderRadius: '8px',
-              fontSize: '17px',
+              fontSize: '19px',
+              marginBottom: '50px',
             }}
             type="submit"
           >
@@ -157,5 +167,4 @@ export const AddRecipes = () => {
     </div>
   </div>
 );
-          }
-          export default AddRecipes;
+};

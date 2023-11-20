@@ -42,7 +42,7 @@ export const Profile = () => {
         <div className='container2'>
         <div className="editButton">
               <Link to="/EditProfile" className="link"style={{ color: 'black'}}> Edit Profile </Link>
-            </div>
+        </div>
 
         </div>
       </div>

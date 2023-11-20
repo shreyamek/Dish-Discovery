@@ -1,27 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import theme from './theme'
-import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider} from '@chakra-ui/react';
 import { RecipeProvider } from './pages/RecipeContext';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <App />
+      <RecipeProvider>
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
+      </RecipeProvider>
     </BrowserRouter>
-  </React.StrictMode>
-);
-
-ReactDOM.render(
-  <React.StrictMode>
-    <RecipeProvider>
-      <App />
-    </RecipeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

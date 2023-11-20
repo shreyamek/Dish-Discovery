@@ -18,3 +18,9 @@ Technology Used: React.js, CSS, Chakra UI
 | Shreya | 02 | Popular Recipes Generated |
 | Shreya | 03 | Search for Recipes using Ingredients |
 | Shreya | 04 | Invalid Search Requests Result in Error Page |
+| Preethika | 05 | Registering Account through Registration Page |
+| Preethika | 06 | Switching Between Log In and Registration Page |
+| Preethika | 07 | Log In and Registration Redirection |
+| Preethika | 08 | Show and Hide Password |
+| Preethika | 09 | Login and Register Error Message |
+

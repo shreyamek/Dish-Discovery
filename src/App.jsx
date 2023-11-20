@@ -12,10 +12,11 @@ import { About } from './pages/About';
 import background from './BackgroundImage.png';
 import Register from './pages/Register';
 import Login from './pages/Login';
-
+import { RecipeProvider } from './pages/RecipeContext';
 
 function App() {
   return (
+    <RecipeProvider>
     <div className="App">
         <div className="App-header" style={{backgroundImage: `url(${background})`}}>
         </div>
@@ -29,7 +30,6 @@ function App() {
               <Route path="/feed" element={<Feed/>}/>
               <Route path="/savedrecipes" element={<SavedRecipes/>}/>
               <Route path="/profile" element={<Profile/>}/>
-              <Route path="/editprofile" element={<EditProfile/>}/>
               <Route path="/settings" element={<Settings/>}/>
               <Route path="/about" element={<About/>}/>
               <Route path="/addrecipes" element={<AddRecipes/>}/>
@@ -37,10 +37,8 @@ function App() {
             </Routes>
         </header>
       </div>
+      </RecipeProvider>
   );
 }
 
-
 export default App;
-
-//<Route path="/feed" element={<Feed/>}/>

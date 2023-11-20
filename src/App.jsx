@@ -10,6 +10,7 @@ import RecipeDetail from './pages/Recipe';
 import { Settings } from './pages/Settings';
 import { About } from './pages/About';
 import background from './BackgroundImage.png';
+import { EditProfile } from './pages/EditProfile';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Searched from './pages/Searched';
@@ -36,6 +37,7 @@ function App() {
               <Route path="/profile" element={<Profile/>}/>
               <Route path="/settings" element={<Settings/>}/>
               <Route path="/about" element={<About/>}/>
+              <Route path="/editprofile" element={<EditProfile/>}/>
               <Route path="/addrecipes" element={<AddRecipes/>}/>
               <Route path="/recipe/:recipeId" element={<RecipeDetail />} />
               <Route path="/searched/:search" element={<Searched/>} />

@@ -3,7 +3,8 @@ import './EditProfile.css';
 import { Checkbox, CheckboxGroup, Stack, Input, Text, Flex } from '@chakra-ui/react'
 import { chakra } from '@chakra-ui/react'
 import { motion, isValidMotionProp } from 'framer-motion'
-import { Link } from 'react-router-dom';
+import { useProfile } from './ProfileContext';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const ChakraBox = chakra(motion.div, {
@@ -11,27 +12,56 @@ const ChakraBox = chakra(motion.div, {
 })
 
 
-export const EditProfile = () => {
-    const [value, setValue] = React.useState('')
-  const handleChange = (event) => setValue(event.target.value)
+export const EditProfile = () => 
+{
 
-  const [showOtherInput, setShowOtherInput] = React.useState(false);
-  const [otherInputValue, setOtherInputValue] = React.useState('');
+    const [showOtherInput, setShowOtherInput] = React.useState(false);
+    const [otherInputValue, setOtherInputValue] = React.useState('');
 
-  const handleCheckboxChange = (values) => {
-    setShowOtherInput(values.includes('Other'));
+    const handleCheckboxChange = (values) => 
+    {
+        setShowOtherInput(values.includes('Other'));
+    };
+
+    const containerStyle = {
+        backgroundColor: '#C1E7AC',
+        width:'50%',
+        padding: '50px', 
+        borderRadius: '20px',  
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+        maxWidth: '800px',  
+        margin: '40px auto 0',  
+        color: 'black', 
+    };
+
+    const { updateProfileData } = useProfile();
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = React.useState({
+    firstName: '',
+    lastName: '',
+    // Add other form fields as needed
+  });
+
+  const handleChange = (field, value) => 
+  {
+    setFormData({
+      ...formData,
+      [field]: value,
+    });
   };
 
-  const containerStyle = {
-    backgroundColor: '#C1E7AC',
-    width:'50%',
-    padding: '50px', 
-    borderRadius: '20px',  
-    boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-    maxWidth: '800px',  
-    margin: '40px auto 0',  
-    color: 'black', 
+  const handleDoneEditing = () => {
+    // Assuming you want to pass specific data to the profile page
+    const dataToSend = {
+      userName: formData.userName,
+      aboutMe: formData.aboutMe,
+    };
+
+    updateProfileData(dataToSend);
+    navigate('/profile'); // Use useNavigate instead of history.push
   };
+
 
   return (
     <div style={containerStyle}>
@@ -53,44 +83,45 @@ export const EditProfile = () => {
             <Flex align='center'>
                 <Text mr='4px'>Last Name:</Text>
                 <Input
-                onChange={handleChange}
-                placeholder='Enter your last name'
-                size='sm'
-                width='200px'
-                borderColor='black'
+                    onChange={handleChange}
+                    placeholder='Enter your last name'
+                    size='sm'
+                    width='200px'
+                    borderColor='black'
                 />
             </Flex>
 
             <Flex align='center'>
                 <Text mr='4px'>Username</Text>
                 <Input
-                onChange={handleChange}
-                placeholder='@username'
-                size='sm'
-                width='200px'
-                borderColor='black'
+                    onChange={(e) => handleChange('userName', e.target.value)}
+                    value={formData.userName}
+                    placeholder='@username'
+                    size='sm'
+                    width='200px'
+                    borderColor='black'
                 />
             </Flex>
 
             <Flex align='center'>
                 <Text mr='4px'>Email:</Text>
                 <Input
-                onChange={handleChange}
-                placeholder='Enter your email address'
-                size='sm'
-                width='200px'
-                borderColor='black'
+                    onChange={handleChange}
+                    placeholder='Enter your email address'
+                    size='sm'
+                    width='200px'
+                    borderColor='black'
                 />
             </Flex>
 
             <Flex align='center'>
                 <Text mr='4px'>Bio</Text>
                 <Input
-                onChange={handleChange}
-                placeholder='Tell us about you!'
-                size='sm'
-                width='200px'
-                borderColor='black'
+                    onChange={(e) => handleChange('aboutMe', e.target.value)}
+                    placeholder='Tell us about you!'
+                    size='sm'
+                    width='200px'
+                    borderColor='black'
                 />
             </Flex>
 
@@ -129,10 +160,12 @@ export const EditProfile = () => {
         <br/> 
 
         <div className='container3'>
-          <div className="doneButton">
-                <Link to="/Profile" className="link" style={{ color: 'black'}}> Done Editing </Link>
-          </div>
+        <div className="doneButton">
+          <Link to="/profile" className="link" onClick={handleDoneEditing} style={{ color: 'black' }}>
+            Done Editing
+          </Link>
         </div>
+      </div>
 
          <br/> <br/>
 

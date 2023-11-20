@@ -4,16 +4,13 @@ import './Profile.css';
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useRecipeContext } from '../pages/RecipeContext';
+import { useProfile } from './ProfileContext';
 
-
-const user = {
-  name: '@User1',
-  imageSize: 200,
-};
 
 //Laya
 export const Profile = () => {
   const { recipes } = useRecipeContext();
+  const { profileData } = useProfile();
 
   const recipeBoxStyle = {
     background: '#E0E0E0', 
@@ -38,11 +35,12 @@ export const Profile = () => {
         }}
       />
     </div>
-        <h2>{user.name}</h2>
+    <p>{profileData.userName}</p>
         <div className='container2'>
-          <div className="editButton">
-            <Link to="/EditProfile" className="link"style={{ color: 'black'}}> Edit Profile </Link>
-          </div>
+        <div className="editButton">
+              <Link to="/EditProfile" className="link"style={{ color: 'black'}}> Edit Profile </Link>
+            </div>
+
         </div>
       </div>
 
@@ -77,6 +75,7 @@ export const Profile = () => {
       </div>
       <div className="rectangleBar4">
         <div className="head2"> About Me </div>
+          <p>Here's a little about me: {profileData.aboutMe}</p>
       </div>
     </div>
   )

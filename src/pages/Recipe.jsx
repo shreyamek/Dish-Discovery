@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import './Recipe.css'
 
 function Recipe() {
   const { recipeId } = useParams();
@@ -26,7 +27,9 @@ function Recipe() {
   return (
     <div className="recipe">
       <h2>{recipeData.title}</h2>
-      <img src={recipeData.image} alt={recipeData.title} />
+      <div className="recipeImg">
+        <img src={recipeData.image} alt={recipeData.title} />
+      </div>
       <h3>Ingredients:</h3>
       <ul>
         {recipeData.extendedIngredients.map((ingredient) => (

@@ -9,10 +9,10 @@ export const Navbar = () => {
         <Link to="/Home">Home</Link>
       </li>
       <li>
-        <Link to="/feed">Recommended Recipes</Link>
+        <Link to='/about'>About</Link>
       </li>
       <li>
-        <Link to='/savedrecipes'>Saved Recipes</Link>
+        <Link to="/feed">Recommended Recipes</Link>
       </li>
       <li>
         <Link to='/addrecipes'>Add Recipes</Link>
@@ -23,9 +23,7 @@ export const Navbar = () => {
       <li>
         <Link to='/settings'>Settings</Link>
       </li>
-      <li>
-        <Link to='/about'>About</Link>
-      </li>
+      
     </ul>
   </div>
   )

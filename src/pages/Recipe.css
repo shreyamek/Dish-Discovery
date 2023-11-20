@@ -1,0 +1,27 @@
+.recipe {
+    justify-content: center;
+    position: auto;
+    padding: 5%;
+    font-family: 'Roboto';
+    text-align: left;
+}
+
+.recipeImg {
+    height: 50%;
+    position: auto;
+    justify-content: center;
+    display: flex;
+    padding-top: 2%;
+}
+
+h2 {
+    font-size: 150%;
+    font-weight: 650;
+    text-align: center;
+}
+
+h3 {
+    font-size: 110%;
+    font-weight: 600;
+    padding-top: 3%;
+}

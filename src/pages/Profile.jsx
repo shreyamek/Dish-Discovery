@@ -6,6 +6,9 @@ import React, { useEffect, useState } from 'react';
 import { useRecipeContext } from '../pages/RecipeContext';
 import { useProfile } from './ProfileContext';
 
+const user = {
+  name:''
+};
 
 //Laya
 export const Profile = () => {

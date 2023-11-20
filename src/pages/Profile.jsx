@@ -33,8 +33,8 @@ export const Profile = () => {
         src={circle}
         alt={'Photo of ' + user.name}
         style={{
-          width: user.imageSize,
-          height: user.imageSize,
+          width: 300,
+          height: 300,
         }}
       />
     </div>

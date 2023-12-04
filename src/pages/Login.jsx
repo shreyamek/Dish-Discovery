@@ -54,7 +54,7 @@ export const Login = (props) => {
           <div className="sideText"> Make cooking hassle-free. </div>
           <Center>
           <div className="smallLogo">
-             <img styles={size} width={160} height={160} src={logo} alt="Logo" />
+             <img styles={size} width={220} height={160} src={logo} alt="Logo" />
               </div>
               </Center>
               <div className="container1"style={{backgroundColor: "C6D8A1", opacity: 50}}>

@@ -18,7 +18,7 @@
   position: absolute;
   width: 300px;
   height: 75px;
-  background-color: #abe7b3;
+  background-color: #BEE4B4;
   /* Light green color */
   border-radius: 10px;
   /* Adjust the border-radius to control the roundness of the corners */
@@ -76,9 +76,8 @@
 
 .rectangleBar2 {
   width: 100%;
-  min-height: 800px;
-  /* Set a minimum height */
-  background-color: #F8D3E0;
+  min-height: 600px;
+  background-color: #F6CED5;
 }
 
 /* Add a class for the recipe details */

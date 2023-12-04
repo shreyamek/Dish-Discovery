@@ -2,8 +2,13 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+  const navStyle = {
+    backgroundColor: '#F6CED5', // Light pink color
+  };
+
+
   return (
-    <div className='nav'>
+    <div className='nav' style={navStyle}>
     <ul>
       <li>
         <Link to="/Home">Home</Link>

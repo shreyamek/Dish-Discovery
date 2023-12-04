@@ -1,62 +1,110 @@
-.container{
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-      
-    /* Preserve aspet ratio */
-    min-width: 100%;
-    min-height: 200%;
-    text-align: center;
-    justify-content: center;
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 200%;
+  text-align: center;
+  justify-content: center;
 }
 
-.img{
-   margin-top: 50;
+.img {
+  margin-top: 50;
 }
 
 .editButton {
-    position: absolute;
-    width: 300px;
-    height: 75px;
-    background-color: #abe7b3; /* Light green color */
-    border-radius: 10px; /* Adjust the border-radius to control the roundness of the corners */
-  }
-  
-  .link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff; /* White color for the link text */
-  }
+  position: absolute;
+  width: 300px;
+  height: 75px;
+  background-color: #abe7b3;
+  /* Light green color */
+  border-radius: 10px;
+  /* Adjust the border-radius to control the roundness of the corners */
+}
 
-  .container2 {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    height: 20vh; /* This makes the container take up the full height of the viewport */
-  }
+.link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  /* White color for the link text */
+}
 
-  .rectangleBar {
-    width: 100%;
-    height: 400px; /* Adjust the height as needed */
-    background-color: #CDEBBF; 
-  }
-  .rectangleBar2 {
-    width: 100%;
-    height: 800px; /* Adjust the height as needed */
-    background-color: #F8D3E0; 
-  }
-  .rectangleBar3 {
-    width: 100%;
-    height: 400px; /* Adjust the height as needed */
-    background-color: #FFD7AE; 
-  }
-  
-  .rectangleBar4 {
-    width: 100%;
-    height: 400px; /* Adjust the height as needed */
-    background-color: #BFDDF1; 
-  }
-  
+.container2 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  /* This makes the container take up the full height of the viewport */
+}
+
+.recipeListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow recipes to wrap to the next line if there's not enough space */
+  justify-content: center;
+}
+
+/* Adjust the height of the recipe box */
+.recipeBox {
+  background: #E0E0E0;
+  padding: 10px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.recipeImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.rectangleBar {
+  width: 100%;
+  height: 400px;
+  /* Adjust the height as needed */
+  background-color: #CDEBBF;
+}
+
+.rectangleBar2 {
+  width: 100%;
+  min-height: 800px;
+  /* Set a minimum height */
+  background-color: #F8D3E0;
+}
+
+/* Add a class for the recipe details */
+.recipeDetails {
+  flex-grow: 1;
+  /* Allow the details to take up the remaining space */
+}
+
+/* Add a class for the recipe instructions */
+.recipeInstructions {
+  flex-grow: 1;
+  /* Allow the instructions to take up the remaining space */
+  overflow-y: auto;
+  /* Add a scrollbar if the content overflows */
+}
+
+.rectangleBar3 {
+  width: 100%;
+  height: 400px;
+  /* Adjust the height as needed */
+  background-color: #FFD7AE;
+}
+
+.rectangleBar4 {
+  width: 100%;
+  height: 400px;
+  /* Adjust the height as needed */
+  background-color: #BFDDF1;
+}

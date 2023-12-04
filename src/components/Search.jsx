@@ -27,7 +27,7 @@ const FormStyle = styled.form`
         position: relative;
     }
     input {
-        background: #B2D3C2;
+        background: #C8E4C0;
         color: black;
         border-radius: 1rem;
         outline: none;

@@ -66,10 +66,6 @@ export const Profile = () => {
           </div>
         </div>
       </div>
-
-      <div className="rectangleBar">
-        <div className="head2"> Bookmarks </div>
-      </div>
       <div className="rectangleBar2">
         <div className="head2"> Your Recipes </div>
         <ul>

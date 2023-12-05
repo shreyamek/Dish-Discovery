@@ -252,7 +252,7 @@ export const AddRecipes = () => {
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
             }}
           >
-            <p>Please Fill in All Fields.</p>
+            <p>Please Fill in all Fields.</p>
             <button
               onClick={() => setShowPopup(false)}
               style={{

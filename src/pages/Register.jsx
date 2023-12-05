@@ -45,7 +45,7 @@ export const Register = (props) => {
             history('/Home');
         }).catch((error) => {
             console.log(error);
-            setError('There is already a user associated with this email, please log in!');
+            setError('Registration error, please try again!');
         })
     }
     return(
@@ -71,8 +71,8 @@ export const Register = (props) => {
                 <input className="medium-text" id="password" value={password} onChange={(e) => setPass(e.target.value)} type = {visible ? "text" : "password"} placeholder="******"/>
                 <IconButton
                 aria-label={visible ? 'Hide' : 'Show'}
-                colorScheme='black'
-                icon={visible ? <ViewIcon  /> : <ViewOffIcon  />}
+                colorScheme='transparent'
+                icon={visible ? <ViewOffIcon /> : <ViewIcon  />}
                 onClick={() => setVisible(!visible)}
                 />
                 <div className="small-text"> A password must have at least 6 characters</div>

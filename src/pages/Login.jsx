@@ -70,7 +70,7 @@ export const Login = (props) => {
                 <IconButton
                 aria-label={visible ? 'Hide' : 'Show'}
                 colorScheme='black'
-                icon={visible ? <ViewIcon  /> : <ViewOffIcon />}
+                icon={visible ? <ViewOffIcon  /> : <ViewIcon />}
                 onClick={() => setVisible(!visible)}
                 />
                 <div></div>

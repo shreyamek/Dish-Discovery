@@ -44,9 +44,11 @@ function Feed() {
     
     <div className="App" style={{ backgroundImage: `url(${background})` }}>
       <Box>
+        <br/><br/>
         <Heading as="h2" mb="4">
           Recommended Recipes
         </Heading>
+        <br/>
         {recipes.length > 0 ? (
           <>
             <Grid templateColumns={`repeat(${columns}, 1fr)`} gap={4} justifyContent="space-between" flexWrap="wrap" padding="0 15vw">

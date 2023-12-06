@@ -24,6 +24,7 @@ export const Profile = () => {
     marginRight: "20px",
     display: "flex",
     flexDirection: "column",
+    background: "#FFE2E6",
   };
 
   const recipeImageStyle = {
@@ -77,12 +78,12 @@ export const Profile = () => {
                 alt={`Image for ${recipe.recipeName}`}
                 style={recipeImageStyle}
               />
-              <ul>
+              <ul> <h4> Ingredients: </h4>
                 {recipe.ingredients.map((ingredient, ingIndex) => (
                   <li key={ingIndex}>{ingredient}</li>
                 ))}
-              </ul>
-              <p>
+              </ul> <h4> Instructions: </h4>
+              <p> 
                 {recipe.instruction.split("\n").map((line, lineIndex) => (
                   <span key={lineIndex}>
                     {line}

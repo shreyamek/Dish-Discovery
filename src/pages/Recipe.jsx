@@ -25,6 +25,22 @@ function Recipe() {
     return <div>Loading...</div>;
   }
 
+  const stripHtmlTags = (html) => {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || "";
+  };
+  
+  const formatInstructions = (instructions) => {
+    const cleanedInstructions = stripHtmlTags(instructions);
+    const steps = cleanedInstructions.split('. ');
+  
+    return steps.map((step, index) => (
+      <p key={index}>
+        <strong>{index + 1}.</strong> {step}
+      </p>
+    ));
+  };
+
   return (
     <div className="App" style={{backgroundImage: `url(${background})`}}>
     <div className="recipe">
@@ -32,14 +48,15 @@ function Recipe() {
       <div className="recipeImg">
         <img src={recipeData.image} alt={recipeData.title} />
       </div>
+      <p className="recipeDescription" dangerouslySetInnerHTML={{ __html: recipeData.summary }} />
       <h3>Ingredients:</h3>
-      <ul>
+      <ul className="recipeIngredients">
         {recipeData.extendedIngredients.map((ingredient) => (
           <li key={ingredient.id}>{ingredient.original}</li>
         ))}
       </ul>
       <h3>Instructions:</h3>
-      <div dangerouslySetInnerHTML={{ __html: recipeData.instructions }} style={{ textAlign: 'left' }} />
+      {formatInstructions(recipeData.instructions)}
     </div>
     </div>
   );

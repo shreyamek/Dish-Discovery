@@ -49,7 +49,7 @@ function Feed() {
         </Heading>
         {recipes.length > 0 ? (
           <>
-            <Grid templateColumns={`repeat(${columns}, 1fr)`} gap={4}>
+            <Grid templateColumns={`repeat(${columns}, 1fr)`} gap={4} justifyContent="space-between" flexWrap="wrap" padding="0 15vw">
               {recipes.map((recipe) => (
                 <Card key={recipe.id} mb="4">
                   <Link to={`/recipe/${recipe.id}`}>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import background from '../BackgroundImage.png';
 import './Recipe.css'
 
 function Recipe() {
@@ -25,6 +26,7 @@ function Recipe() {
   }
 
   return (
+    <div className="App" style={{backgroundImage: `url(${background})`}}>
     <div className="recipe">
       <h2>{recipeData.title}</h2>
       <div className="recipeImg">
@@ -38,6 +40,7 @@ function Recipe() {
       </ul>
       <h3>Instructions:</h3>
       <div dangerouslySetInnerHTML={{ __html: recipeData.instructions }} style={{ textAlign: 'left' }} />
+    </div>
     </div>
   );
 }

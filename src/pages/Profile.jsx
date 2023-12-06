@@ -56,6 +56,7 @@ export const Profile = () => {
             }}
           />
         </div>
+        <p> {profileData.firstName} {profileData.lastName}</p>
         <p>{profileData.userName}</p>
         <div className="container2">
           <div className="editButton">
@@ -96,7 +97,8 @@ export const Profile = () => {
       </div>
       <div className="rectangleBar4">
         <div className="head2"> About Me </div>
-        <p>Here's a little about me: {profileData.aboutMe}</p>
+        <p>Here's a little about me: 
+          {profileData.aboutMe} </p>
       </div>
     </div>
   );

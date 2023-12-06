@@ -94,9 +94,6 @@ export const Profile = () => {
           ))}
         </ul>
       </div>
-      <div className="rectangleBar3">
-        <div className="head2"> Folders </div>
-      </div>
       <div className="rectangleBar4">
         <div className="head2"> About Me </div>
         <p>Here's a little about me: {profileData.aboutMe}</p>

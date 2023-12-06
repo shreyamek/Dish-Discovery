@@ -246,7 +246,7 @@ const auth = getAuth();
 
   Technical Support:
   <ul>
-    <li>Contact Support: If you're experiencing technical difficulties or have encountered an error, don't hesitate to contact our technical support team. You can reach us at [insert contact information].</li>
+    <li>Contact Support: If you're experiencing technical difficulties or have encountered an error, don't hesitate to contact our technical support team. You can reach us at <a href="mailto:dishdiscovery@gmail.com" style={{ color: '#0073e6' }}>dishdiscovery@gmail.com</a>.</li>
     <li>Report a Bug: Found a bug or a technical glitch? Help us improve by reporting it through our dedicated bug reporting system. We appreciate your assistance in making Dish Discovery better.</li>
   </ul>
   <br /><br />

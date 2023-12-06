@@ -1,5 +1,5 @@
 //Aditya Sajeev
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './settings-page.css';
 import {
   Button,
@@ -14,18 +14,36 @@ import {
 } from '@chakra-ui/react';
 import { EditIcon, ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons'
 import { IconButton } from '@chakra-ui/react'
-import { getAuth, signOut } from "firebase/auth";
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { useProfile } from '../pages/ProfileContext';
 import profilepic from '../ProfilePic.png';
+import { initializeApp } from "firebase/app";
+
 
 const SettingsPage = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('account-info');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const { profileData } = useProfile();
+  const [userEmail, setUserEmail] = useState(null);
 
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, update the user email in the component state
+        setUserEmail(user.email);
+      } else {
+        // User is signed out, you might want to handle this case
+      }
+    });
+
+    // Cleanup the observer when the component unmounts
+    return () => unsubscribe();
+  }, []);
 
   const handleSectionClick = (sectionId) => {
     if (sectionId === 'logout') {
@@ -34,6 +52,20 @@ const SettingsPage = () => {
       setActiveSection(sectionId);
     }
   };
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDrGK5gAZTQn8uGIH4fwPLpU8hVmU83UTY",
+    authDomain: "dish-discovery-e2fe4.firebaseapp.com",
+    projectId: "dish-discovery-e2fe4",
+    storageBucket: "dish-discovery-e2fe4.appspot.com",
+    messagingSenderId: "225883867893",
+    appId: "1:225883867893:web:1cf70aeafba973dcbb13bc",
+    measurementId: "G-2Q95Y8MLCE"
+  };
+  // Initialize Firebase
+const fb = initializeApp(firebaseConfig);
+const auth = getAuth();
+
 
   const handleToggleSidebar = () => {
     setSidebarCollapsed(!sidebarCollapsed);
@@ -121,7 +153,7 @@ const SettingsPage = () => {
       <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />} onClick={() => { navigate('/editprofile');}}/></span>
     </div>
     <div className="detail">
-      <p>Email: sage23@gmail.com</p>
+      <p>Email: {userEmail}</p>
       <span className="change-icon"><IconButton aria-label='Edit Username'icon={<EditIcon />} onClick={() => { navigate('/editprofile');}}/></span>
     </div>
     <div className="detail">

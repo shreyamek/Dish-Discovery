@@ -12,6 +12,9 @@ import { About } from './pages/About';
 import background from './BackgroundImage.png';
 import { EditProfile } from './pages/EditProfile';
 import Register from './pages/Register';
+import Authenticate from './pages/Authenticate';
+import AddAuth from './pages/AddAuth';
+import ProfileAuth from './pages/ProfileAuth';
 import Login from './pages/Login';
 import Searched from './pages/Searched';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -34,11 +37,11 @@ function App() {
               <Route path="/Login" element={<Login/>}/>
               <Route path="/feed" element={<Feed/>}/>
               <Route path="/savedrecipes" element={<SavedRecipes/>}/>
-              <Route path="/profile" element={<Profile/>}/>
-              <Route path="/settings" element={<Settings/>}/>
+              <Route path="/profile" element={<ProfileAuth/>}/>
+              <Route path="/settings" element={<Authenticate/>}/>
               <Route path="/about" element={<About/>}/>
               <Route path="/editprofile" element={<EditProfile/>}/>
-              <Route path="/addrecipes" element={<AddRecipes/>}/>
+              <Route path="/addrecipes" element={<AddAuth/>}/>
               <Route path="/recipe/:recipeId" element={<RecipeDetail />} />
               <Route path="/searched/:search" element={<Searched/>} />
             </Routes>

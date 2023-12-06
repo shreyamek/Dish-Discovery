@@ -76,7 +76,7 @@ export default function Home() {
             <AccordionPanel pb={4}>
               {" "}
               <div className="textWithin">
-                Making an account ensures that your comments and recipes are
+                Making an account ensures that your recipes are
                 saved. It also allows you to interact through the website more
                 personally and lets you contribute to our recipe database as
                 well.

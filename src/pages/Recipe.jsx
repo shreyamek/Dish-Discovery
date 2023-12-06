@@ -42,7 +42,7 @@ function Recipe() {
   };
 
   return (
-    <div className="App" style={{backgroundImage: `url(${background})`}}>
+    <div className="App">
     <div className="recipe">
       <h2>{recipeData.title}</h2>
       <div className="recipeImg">

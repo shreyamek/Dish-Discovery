@@ -142,7 +142,7 @@ const auth = getAuth();
       <div className="content">
         <section id="account-info" className={activeSection === 'account-info' ? 'visible' : 'hidden'}>
           
-          <div className="content-box">
+          <div className="content-box-acc">
           <h2>Account Info</h2>
   <div className="profile-icon">
     <img src={profilepic} alt="User Profile Pic" />
@@ -166,12 +166,13 @@ const auth = getAuth();
         <section id="privacy-security" className={activeSection === 'privacy-security' ? 'visible' : 'hidden'}>
         <div className="content-box">
           <h2>Privacy & Security</h2>
+          <br/>
 <p>
   Privacy and Security Policy
+  <br/>
   Effective Date: [11/3/23]
   <br /><br />
   Welcome to Dish Discovery! We are committed to safeguarding your privacy and ensuring the security of your personal information. This Privacy and Security Policy outlines how we collect, use, and protect your data when you visit our website and use our services.
-  <br /><br />
   <br /><br />
   Data We Collect:
   <ul>
@@ -211,11 +212,12 @@ const auth = getAuth();
   <ul>
     <li>Access: You have the right to access and obtain a copy of your personal data.</li>
     <li>Rectification: You can correct inaccuracies in your personal information.</li>
+    <br/>
     <li>Deletion: You can request the deletion of your account and associated data.</li>
   </ul>
   <br /><br />
   Contact Us:
-  If you have any questions or concerns about this Privacy and Security Policy, please contact us.
+  If you have any questions or concerns about this Privacy and Security Policy, please contact us at <a href="mailto:dishdiscovery@gmail.com" style={{ color: '#0073e6' }}>dishdiscovery@gmail.com</a>.
   <br /><br />
   Updates:
   We may update this policy to reflect changes in our data practices or legal requirements. Please review it periodically for any updates.
@@ -228,6 +230,7 @@ const auth = getAuth();
         <section id="help-support" className={activeSection === 'help-support' ? 'visible' : 'hidden'}>
         <div className="content-box">
           <h2>Help & Support</h2>
+          <br/>
           <p>
  
   At Dish Discovery, we're dedicated to providing the assistance and support you need to ensure a smooth and enjoyable experience with our platform. Whether you have questions, encounter issues, or simply want to learn more about how to make the most of our services, our Help and Support resources are here to guide you.
@@ -237,7 +240,7 @@ const auth = getAuth();
   <ol>
     <li>FAQs: Check out our Frequently Asked Questions (FAQs) for quick answers to common inquiries. You might find solutions to your questions right here.</li>
     <li>Tutorials: Explore our collection of step-by-step tutorials that cover various features and functionalities of Dish Discovery. These guides will help you navigate the platform with ease.</li>
-    <li>Contact Us: If you can't find the answers you're looking for, feel free to reach out to our support team. You can contact us by [insert contact method].</li>
+    <li>Contact Us: If you can't find the answers you're looking for, feel free to reach out to our support team. You can contact us at <a href="mailto:dishdiscovery@gmail.com" style={{ color: '#0073e6' }}>dishdiscovery@gmail.com</a>.</li>
   </ol>
   <br /><br />
 
